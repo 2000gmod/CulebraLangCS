@@ -1,0 +1,11 @@
+include "fact.clb";
+include "hello.clb";
+
+func main() : void {
+    print("Hello World\n");
+    
+    for (j : int = 1; j < 11; j = j + 1) {
+        print(j, "! \t= ", fact(j), "\n");
+    }
+    return;
+}
