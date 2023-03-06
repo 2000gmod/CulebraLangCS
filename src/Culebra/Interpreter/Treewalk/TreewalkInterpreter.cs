@@ -29,7 +29,7 @@ public class TreewalkInterpreter {
             runFunction(global.getFunc(functionName));
         }
         catch (ReturnValueContainer) {
-
+            
         }
     }
 

@@ -1,11 +1,22 @@
 include "fact.clb";
-include "hello.clb";
+
+func isPrime(n : int) : bool {
+    if (n < 2) return false;
+    for (j : int = 3; j < n; j = j + 1) {
+        if (n % j == 0) return false;
+    }
+    return true;
+}
+
+func primeSearch(max : int) : void {
+    for (i : int = 1; i < max; i = i + 1) {
+        if (isPrime(i)) print(i, "\n");
+    }
+}
 
 func main() : void {
-    print("Hello World\n");
-    
-    for (j : int = 1; j < 11; j = j + 1) {
-        print(j, "! \t= ", fact(j), "\n");
-    }
+    print("Hello world!\n");
+    primeSearch(50);
+
     return;
 }

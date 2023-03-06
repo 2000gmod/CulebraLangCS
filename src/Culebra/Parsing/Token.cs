@@ -2,7 +2,7 @@ namespace Culebra.Parsing;
 
 using static TokenType;
 
-public class Token {
+public struct Token {
     public TokenType type;
 
     public string identifierName {get; set;}
