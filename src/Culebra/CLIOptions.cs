@@ -10,6 +10,6 @@ class DefaultOptions {
 
 [Verb("run", false, HelpText = "Run a single file")]
 class RunOptions {
-    [Value(0, HelpText = "Input file for running.")]
+    [Value(0, HelpText = "Input file for running.", Required = true)]
     public string path {get; set;}
 }
