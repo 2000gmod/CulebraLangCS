@@ -1,5 +1,6 @@
 namespace Culebra.Parsing;
 
+[Serializable]
 public abstract class Expression { 
     public static void PrintExpr(Expression expr, int depth = 0) {
         for(int i = 0; i < depth; i++) Console.Write("    ");
@@ -22,6 +23,7 @@ public abstract class Expression {
     }
 }
 
+[Serializable]
 public class LiteralExpr : Expression {
     public readonly Token value;
 
@@ -30,6 +32,7 @@ public class LiteralExpr : Expression {
     }
 };
 
+[Serializable]
 public class IdentifierExpr : Expression {
     public readonly Token ident;
 
@@ -38,6 +41,7 @@ public class IdentifierExpr : Expression {
     }
 }
 
+[Serializable]
 public class UnaryExpr : Expression {
     public readonly Expression expr;
     public readonly Token op;
@@ -48,6 +52,7 @@ public class UnaryExpr : Expression {
     }
 }
 
+[Serializable]
 public class BinaryExpr : Expression {
     public readonly Expression left, right;
     public readonly Token op;
@@ -59,6 +64,7 @@ public class BinaryExpr : Expression {
     }
 }
 
+[Serializable]
 public class MemberAccessExpr : Expression {
     public readonly Expression parent;
     public readonly Token name;
@@ -69,6 +75,7 @@ public class MemberAccessExpr : Expression {
     }
 }
 
+[Serializable]
 public class CallExpr : Expression {
     public readonly Expression callee;
     public readonly List<Expression> args;
@@ -84,6 +91,7 @@ public class CallExpr : Expression {
     }
 }
 
+[Serializable]
 public class ParenthesizedExpr : Expression {
     public readonly Expression expr;
 
@@ -92,6 +100,7 @@ public class ParenthesizedExpr : Expression {
     }
 }
 
+[Serializable]
 public class AssignExpr : Expression {
     public readonly Token name;
     public readonly Expression value;

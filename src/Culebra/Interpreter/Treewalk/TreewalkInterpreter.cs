@@ -283,7 +283,7 @@ public class TreewalkInterpreter {
 
     private void interceptBuiltIns(string name, List<Expression> args) {
         if (name == "print") {
-            throw StandardFunctions.print(this, args);
+            throw this.print(args);
         }
     }
 }

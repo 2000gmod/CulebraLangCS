@@ -2,6 +2,7 @@ namespace Culebra.Parsing;
 
 using static TokenType;
 
+[Serializable]
 public struct Token {
     public TokenType type;
 

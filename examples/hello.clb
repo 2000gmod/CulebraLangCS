@@ -16,7 +16,7 @@ func primeSearch(max : int) : void {
 
 func main() : void {
     print("Hello world!\n");
-    primeSearch(50);
+    primeSearch(10);
 
     return;
 }

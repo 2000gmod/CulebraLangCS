@@ -16,8 +16,8 @@ public class Parser {
         if (Path.GetFullPath(parent?.filepath ?? "/") == fullpath) {
             ErrorReporter.reportWarning($"WARNING: file '{filepath}' is including itself.");
         }
-        if(usedFiles.Contains(fullpath)) {
-            if(parent != null) return new();
+        if (usedFiles.Contains(fullpath)) {
+            if (parent != null) return new();
         }
         usedFiles.Add(fullpath);
 
@@ -46,7 +46,7 @@ public class Parser {
         List<Statement> statements = new();
 
         try {
-            while(!isAtEnd()) {
+            while (!isAtEnd()) {
                 statements.Add(topLevelStatement(statements));
             }
             return statements;
@@ -107,12 +107,12 @@ public class Parser {
         return expressionStatement();
     }
 
-    private Statement varDeclaration(Token name, bool useSemicolon = true) {
+    private Statement varDeclaration(Token name) {
         Type type = parseType();
 
         Expression expr = null;
         if (match(ASSIGN)) expr = expression();
-        if (useSemicolon) consume(SEMICOLON, "Expected ';' after variable declaration.");
+        consume(SEMICOLON, "Expected ';' after variable declaration.");
         return new VarDeclarationStmt(type, name, expr);
     }
 

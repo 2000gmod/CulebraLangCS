@@ -1,5 +1,6 @@
 namespace Culebra.Parsing;
 
+[Serializable]
 public enum TokenType {
     PLUS,
     MINUS,

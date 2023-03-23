@@ -1,7 +1,9 @@
 namespace Culebra.Parsing;
 
+[Serializable]
 public abstract class Type { }
 
+[Serializable]
 public class ValueType : Type {
     public readonly Token name;
 
@@ -10,6 +12,7 @@ public class ValueType : Type {
     }
 }
 
+[Serializable]
 public class PointerType : Type {
     public readonly Type pointedType;
 

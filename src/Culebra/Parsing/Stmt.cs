@@ -1,7 +1,9 @@
 namespace Culebra.Parsing;
 
+[Serializable]
 public abstract class Statement { }
 
+[Serializable]
 public class BlockStmt : Statement {
     public readonly List<Statement> statements;
 
@@ -14,6 +16,7 @@ public class BlockStmt : Statement {
     }
 }
 
+[Serializable]
 public class ExprStmt : Statement {
     public readonly Expression expr;
 
@@ -22,6 +25,7 @@ public class ExprStmt : Statement {
     }
 }
 
+[Serializable]
 public struct ParameterT {
     public Type type;
     public Token name;
@@ -32,6 +36,7 @@ public struct ParameterT {
     }
 }
 
+[Serializable]
 public class FuncDeclarationStmt : Statement {
     public readonly Type type;
     public readonly Token name;
@@ -46,6 +51,7 @@ public class FuncDeclarationStmt : Statement {
     }
 }
 
+[Serializable]
 public class VarDeclarationStmt : Statement {
     public readonly Type type;
     public readonly Token name;
@@ -58,6 +64,7 @@ public class VarDeclarationStmt : Statement {
     }
 }
 
+[Serializable]
 public class ReturnStmt : Statement {
     public readonly Expression value;
 
@@ -66,6 +73,7 @@ public class ReturnStmt : Statement {
     }
 }
 
+[Serializable]
 public class IfStmt : Statement {
     public readonly Expression condition;
     public readonly Statement ifBody, elseBody;
@@ -77,6 +85,7 @@ public class IfStmt : Statement {
     }
 }
 
+[Serializable]
 public class WhileStmt : Statement {
     public readonly Expression condition;
     public readonly Statement body;
@@ -89,6 +98,8 @@ public class WhileStmt : Statement {
     }
 }
 
+[Serializable]
 public class BreakStmt : Statement { }
 
+[Serializable]
 public class ContinueStmt : Statement { }
